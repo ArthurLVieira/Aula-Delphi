@@ -1,0 +1,13 @@
+unit Menu.Controller.Entity.Interfaces;
+
+interface
+
+type
+
+  IControllerEntityProdutos = interface
+    ['{D103CD6D-F6FE-4733-BF15-DB1BF0093874}']
+  end;
+
+implementation
+
+end.

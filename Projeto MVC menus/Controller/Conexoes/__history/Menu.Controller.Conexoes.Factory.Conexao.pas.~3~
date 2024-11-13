@@ -1,0 +1,49 @@
+unit Menu.Controller.Conexoes.Factory.Conexao;
+
+interface
+
+uses Menu.Controller.Conexoes.Interfaces, Menu.Model.Conexoes.Interfaces;
+
+type
+
+  TControllerConexoesFactoryConexao = class(TInterfacedObject,
+    IControllerConexao)
+  private
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerConexao;
+    function ConexaoFireDac: IModelConexao;
+  end;
+
+implementation
+
+{ TControllerConexoesFactoryConexao }
+
+uses Menu.Model.Conexoes.Factory.Conexao;
+
+function TControllerConexoesFactoryConexao.ConexaoFireDac: IModelConexao;
+begin
+  Result := TModelConexoesFactoryConexao.New.ConexaoFiredac.Parametros.DataBase
+    ('').UserName('').Password('').DriverID('').Server('').Port(0)
+    .EndParametros.Conectar;
+end;
+
+constructor TControllerConexoesFactoryConexao.Create;
+begin
+
+end;
+
+destructor TControllerConexoesFactoryConexao.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConexoesFactoryConexao.New: IControllerConexao;
+begin
+  Result := Self.Create;
+end;
+
+end.

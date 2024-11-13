@@ -1,0 +1,38 @@
+unit Menu.Controller.Entity.Clientes;
+
+interface
+
+uses Menu.Controller.Entity.Interfaces;
+
+type
+
+  TControllerEntityCliente = class(TInterfacedObject, IControllerEntity)
+    private
+
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : IControllerEntity;
+  end;
+
+implementation
+
+{ TControllerEntityCliente }
+
+constructor TControllerEntityCliente.Create;
+begin
+
+end;
+
+destructor TControllerEntityCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerEntityCliente.New: IControllerEntity;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,26 @@
+unit Menu.Controller.Forms.Default;
+
+interface
+
+type
+
+  TControllerFormsDefault = class
+    class procedure CreateForm(ClassName : string);
+  end;
+
+implementation
+
+uses
+  FMX.Types, FMX.Forms, System.Classes;
+
+{ TControllerFormsDefault }
+
+class procedure TControllerFormsDefault.CreateForm(ClassName: string);
+var
+  ObjFmx : TFmxObjectClass;
+  NewForm : TCustomForm;
+begin
+  ObjFmx := TFmxObjectClass.Create(GetClass(ClassName));
+end;
+
+end.

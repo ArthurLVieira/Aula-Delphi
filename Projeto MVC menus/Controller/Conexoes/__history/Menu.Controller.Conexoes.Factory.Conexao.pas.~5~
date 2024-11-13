@@ -1,0 +1,54 @@
+unit Menu.Controller.Conexoes.Factory.Conexao;
+
+interface
+
+uses Menu.Controller.Conexoes.Interfaces, Menu.Model.Conexoes.Interfaces;
+
+type
+
+  TControllerConexoesFactoryConexao = class(TInterfacedObject,
+    IControllerFactoryConexao)
+  private
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerFactoryConexao;
+    function ConexaoFireDac: IModelConexao;
+  end;
+
+implementation
+
+{ TControllerConexoesFactoryConexao }
+
+uses Menu.Model.Conexoes.Factory.Conexao;
+
+function TControllerConexoesFactoryConexao.ConexaoFireDac: IModelConexao;
+begin
+  Result := TModelConexoesFactoryConexao.New.ConexaoFiredac.Parametros
+    .DataBase('jdbc:postgresql://localhost:5432/sistema')
+    .UserName('postgres')
+    .Password('1234')
+    .DriverID('PG')
+    .Server('')
+    .Port(5432)
+    .EndParametros.Conectar;
+end;
+
+constructor TControllerConexoesFactoryConexao.Create;
+begin
+
+end;
+
+destructor TControllerConexoesFactoryConexao.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConexoesFactoryConexao.New: IControllerFactoryConexao;
+begin
+  Result := Self.Create;
+end;
+
+end.

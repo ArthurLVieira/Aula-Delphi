@@ -1,0 +1,17 @@
+unit Menu.Model.Entity.Interfaces;
+
+interface
+
+uses
+  System.Classes;
+
+type
+
+  IModelEntity = interface
+    ['{1DCC13B3-C74F-4E94-B4EF-A472D2C89DF0}']
+    function Listar : TComponent;
+  end;
+
+implementation
+
+end.

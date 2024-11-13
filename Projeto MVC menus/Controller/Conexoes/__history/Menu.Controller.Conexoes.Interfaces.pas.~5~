@@ -1,0 +1,16 @@
+unit Menu.Controller.Conexoes.Interfaces;
+
+interface
+
+uses Menu.Model.Conexoes.Interfaces;
+
+type
+
+  IControllerConexao = interface
+    ['{6DC140D0-75CF-45E0-A649-4CD7B5333179}']
+    function Conexao : IModelConexao;
+  end;
+
+implementation
+
+end.

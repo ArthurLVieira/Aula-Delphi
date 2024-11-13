@@ -1,0 +1,7 @@
+unit Menu.Controller.Interfaces;
+
+interface
+
+implementation
+
+end.

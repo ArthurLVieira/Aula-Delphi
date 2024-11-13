@@ -1,0 +1,45 @@
+unit Menu.Controller.Conexoes.Factory.FireDac;
+
+interface
+
+uses Menu.Controller.Conexoes.Interfaces, Menu.Model.Conexoes.Interfaces;
+
+type
+
+  TControllerConexoesFactoryFireDac = class(TInterfacedObject,
+    IControllerFactoryDataSet)
+  private
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerFactoryDataSet;
+    function DataSet: IModelDataSet;
+  end;
+
+implementation
+
+{ TControllerConexoesFactoryFireDac }
+
+constructor TControllerConexoesFactoryFireDac.Create;
+begin
+
+end;
+
+function TControllerConexoesFactoryFireDac.DataSet: IModelDataSet;
+begin
+  re
+end;
+
+destructor TControllerConexoesFactoryFireDac.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConexoesFactoryFireDac.New: IControllerFactoryDataSet;
+begin
+  Result := Self.Create;
+end;
+
+end.

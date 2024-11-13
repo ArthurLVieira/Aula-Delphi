@@ -1,0 +1,38 @@
+unit Menu.Controller.Entity.Produtos;
+
+interface
+
+uses Menu.Controller.Entity.Interfaces;
+
+type
+
+  TControllerEntityProdutos = class(TInterfacedObject, IControllerEntityProdutos)
+    private
+
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : IControllerEntityProdutos;
+  end;
+
+implementation
+
+{ TControllerEntityProdutos }
+
+constructor TControllerEntityProdutos.Create;
+begin
+
+end;
+
+destructor TControllerEntityProdutos.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerEntityProdutos.New: IControllerEntityProdutos;
+begin
+  Result := Self.Create;
+end;
+
+end.

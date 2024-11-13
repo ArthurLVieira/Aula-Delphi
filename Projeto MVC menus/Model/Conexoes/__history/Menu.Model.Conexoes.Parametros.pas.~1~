@@ -1,0 +1,36 @@
+unit Menu.Model.Conexoes.Parametros;
+
+interface
+
+type
+
+  TMinhaClasse = class(TInterfacedObject, IMinhaClasse)
+    private
+
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : IMinhaClasse;
+  end;
+
+implementation
+
+{ TMinhaClasse }
+
+constructor TMinhaClasse.Create;
+begin
+
+end;
+
+destructor TMinhaClasse.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TMinhaClasse.New: IMinhaClasse;
+begin
+  Result := Self.Create;
+end;
+
+end.

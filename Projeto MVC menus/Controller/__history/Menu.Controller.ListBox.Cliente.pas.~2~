@@ -1,0 +1,11 @@
+unit Menu.Controller.ListBox.Cliente;
+
+interface
+
+  TControllerListBoxCliente = class(TInter)
+
+implementation
+
+uses Menu.Controller.Interfaces;
+
+end.
