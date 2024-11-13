@@ -1,0 +1,48 @@
+unit Menu.Controller.Conexoes.Facade;
+
+interface
+
+uses
+  Menu.Controller.Conexoes.Interfaces;
+
+type
+
+  TControllerConexoesFacade = class(TInterfacedObject,
+    IControllerConexoesFacade)
+  private
+    FConexao : IControllerConexoesFactoryConexao;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerConexoesFacade;
+    function FireDac: IControllerConexoesFactoryConexao;
+  end;
+
+implementation
+
+{ TControllerConexoesFacade }
+
+uses Menu.Controller.Conexoes.Factory.Conexao;
+
+constructor TControllerConexoesFacade.Create;
+begin
+  FConexao := TControllerConexoesFactoryConexao.New;
+end;
+
+destructor TControllerConexoesFacade.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerConexoesFacade.FireDac: IControllerConexoesFactoryConexao;
+begin
+  resu
+end;
+
+class function TControllerConexoesFacade.New: IControllerConexoesFacade;
+begin
+  Result := Self.Create;
+end;
+
+end.

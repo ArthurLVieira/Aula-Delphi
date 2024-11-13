@@ -19,9 +19,14 @@ type
     function ConexaoFireDacMySql: IModelConexao;
   end;
 
-  IControllerFactoryDataSet = interface
+  IControllerConexoesFactoryDataSet = interface
     ['{3D9FC384-5854-4598-86B4-8E0DD2ADD674}']
     function DataSet(Conexao: IModelConexao): IModelDataSet;
+  end;
+
+  IControllerConexoesFacade = interface
+    ['{C407274F-21AD-4D26-A978-D201221C3B56}']
+    function FireDac : IControllerConexoesFactoryConexao;
   end;
 
 implementation

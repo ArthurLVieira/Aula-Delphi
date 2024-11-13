@@ -9,26 +9,26 @@ uses Menu.Controller.Entity.Interfaces, Menu.Model.Conexoes.Interfaces,
 type
 
   TControllerEntityProdutos = class(TInterfacedObject, IControllerEntity)
-    private
-      FConexao : IModelConexao;
-      FDataSet : IModelDataSet;
-      FEntity : IModelEntity;
-    public
-      constructor Create;
-      destructor Destroy; override;
-      class function New : IControllerEntity;
-      function Lista(aDataSource: TDataSource): IControllerEntity;
+  private
+    FFacade: IModelConexoesFacade;
+    FEntity: IModelEntity;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerEntity;
+    function Lista(aDataSource: TDataSource): IControllerEntity;
   end;
 
 implementation
 
 { TControllerEntityProdutos }
 
+uses Menu.Model.Conexoes.Facade;
+
 constructor TControllerEntityProdutos.Create;
 begin
-  FConexao := TModelConexoesFactoryConexao.New.ConexaoFiredac;
-  FDataSet := TModelConexoesFactoryDataSet.New.DataSetFiredac(FConexao);
-  FEntity := TModelEntityFactory.New.Produtos(FDataSet);
+  FFacade := TModelConexoesFacade.New;
+  FEntity := TModelEntityFactory.New.Produtos(FFacade.iDataSet);
 end;
 
 destructor TControllerEntityProdutos.Destroy;
@@ -37,8 +37,8 @@ begin
   inherited;
 end;
 
-function TControllerEntityProdutos.Lista(
-  aDataSource: TDataSource): IControllerEntity;
+function TControllerEntityProdutos.Lista(aDataSource: TDataSource)
+  : IControllerEntity;
 begin
   Result := Self;
   aDataSource.DataSet := TDataSet(FEntity.Listar);

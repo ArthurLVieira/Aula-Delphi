@@ -14,8 +14,13 @@ type
 
   IControllerEntityFactory = interface
     ['{44E0B780-885C-4379-A4C4-A2E1E30A1565}']
-    function Produtos : IControllerEntity;
-    function Clientes : IControllerEntity;
+    function Produtos: IControllerEntity;
+    function Clientes: IControllerEntity;
+  end;
+
+  IControllerEntityFacade = interface
+    ['{80AE8CF5-A643-426C-813C-E813C70D1327}']
+    function Entity: IControllerEntityFactory;
   end;
 
 implementation

@@ -10,8 +10,7 @@ type
 
   TControllerEntityCliente = class(TInterfacedObject, IControllerEntity)
   private
-    FConexao: IModelConexao;
-    FDataSet: IModelDataSet;
+  FFacade : IModelConexoesFacade;
     FEntity: IModelEntity;
   public
     constructor Create;
@@ -24,11 +23,12 @@ implementation
 
 { TControllerEntityCliente }
 
+uses Menu.Model.Conexoes.Facade;
+
 constructor TControllerEntityCliente.Create;
 begin
-  FConexao := TModelConexoesFactoryConexao.New.ConexaoFiredac;
-  FDataSet := TModelConexoesFactoryDataSet.New.DataSetFiredac(FConexao);
-  FEntity := TModelEntityFactory.New.Cliente(FDataSet);
+  FFacade := TModelConexoesFacade.New;
+  FEntity := TModelEntityFactory.New.Cliente(FFacade.iDataSet);
 end;
 
 destructor TControllerEntityCliente.Destroy;

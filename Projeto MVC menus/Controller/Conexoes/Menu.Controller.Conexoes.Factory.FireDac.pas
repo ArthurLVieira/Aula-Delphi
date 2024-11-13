@@ -8,13 +8,13 @@ uses Menu.Controller.Conexoes.Interfaces, Menu.Model.Conexoes.Factory.DataSet,
 type
 
   TControllerConexoesFactoryFireDac = class(TInterfacedObject,
-    IControllerFactoryDataSet)
+    IControllerConexoesFactoryDataSet)
   private
 
   public
     constructor Create;
     destructor Destroy; override;
-    class function New: IControllerFactoryDataSet;
+    class function New: IControllerConexoesFactoryDataSet;
     function DataSet(Conexao : IModelConexao): IModelDataSet;
   end;
 
@@ -38,7 +38,7 @@ begin
   inherited;
 end;
 
-class function TControllerConexoesFactoryFireDac.New: IControllerFactoryDataSet;
+class function TControllerConexoesFactoryFireDac.New: IControllerConexoesFactoryDataSet;
 begin
   Result := Self.Create;
 end;

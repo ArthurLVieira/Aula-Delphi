@@ -1,0 +1,38 @@
+unit Menu.Controller.Entity.Facade;
+
+interface
+
+uses
+  Menu.Controller.Entity.Interfaces;
+
+type
+
+  TControllerEntityFacade = class(TInterfacedObject, IControllerEntityFacade)
+  private
+    FEntity: public constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerEntityFacade;
+    function Entity: IControllerEntityFactory;
+  end;
+
+implementation
+
+{ TControllerEntityFacade }
+
+constructor TControllerEntityFacade.Create;
+begin
+
+end;
+
+destructor TControllerEntityFacade.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerEntityFacade.New: IControllerEntityFacade;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,11 @@
+unit Menu.Controller.Entity.Facade;
+
+interface
+
+type
+
+  TControllerEntityFacade = class(tint)
+
+implementation
+
+end.

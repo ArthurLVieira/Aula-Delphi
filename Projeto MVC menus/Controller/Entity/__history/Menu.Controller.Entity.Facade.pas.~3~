@@ -1,0 +1,18 @@
+unit Menu.Controller.Entity.Facade;
+
+interface
+
+uses
+  Menu.Controller.Entity.Interfaces;
+
+type
+
+  TControllerEntityFacade = class(TInterfacedObject, IControllerEntityFacade)
+    private
+
+    publi
+  end;
+
+implementation
+
+end.

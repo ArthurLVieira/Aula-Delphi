@@ -27,13 +27,23 @@ uses Menu.Model.Conexoes.Factory.Conexao, Menu.Model.Conexoes.Factory.DataSet;
 constructor TModelConexoesFacade.Create;
 begin
   FConexao := TModelConexoesFactoryConexao.New.ConexaoFiredac;
-  FConexao := TModelConexoesFactoryDataSet.New.DataSetFiredac(FConexao);
+  FDataSet := TModelConexoesFactoryDataSet.New.DataSetFiredac(FConexao);
 end;
 
 destructor TModelConexoesFacade.Destroy;
 begin
 
   inherited;
+end;
+
+function TModelConexoesFacade.iConexao: IModelConexao;
+begin
+  Result := FConexao;
+end;
+
+function TModelConexoesFacade.iDataSet: IModelDataSet;
+begin
+  Result := FDataSet;
 end;
 
 class function TModelConexoesFacade.New: IModelConexoesFacade;

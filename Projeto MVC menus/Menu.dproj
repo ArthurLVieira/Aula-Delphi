@@ -350,6 +350,10 @@
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Clientes.pas"/>
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Factory.Conexao.pas"/>
         <DCCReference Include="Model\Conexoes\Menu.Model.Conexoes.Facade.pas"/>
+        <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Facade.pas"/>
+        <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Facade.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.Interfaces.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.Facade.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
