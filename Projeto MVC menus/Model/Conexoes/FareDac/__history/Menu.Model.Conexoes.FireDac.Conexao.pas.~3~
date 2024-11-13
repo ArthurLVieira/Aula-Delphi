@@ -1,0 +1,135 @@
+unit Menu.Model.Conexoes.FireDac.Conexao;
+
+interface
+
+uses Menu.Model.Conexoes.Interfaces, FireDAC.Comp.Client, System.Classes,
+  FireDAC.Comp.UI, FireDAC.Phys.FB, FireDAC.Phys, FireDAC.Phys.Intf;
+
+type
+
+  TModelConexaoFiredac = class(TInterfacedObject, IModelConexao,
+    IModelConexaoParametros)
+  private
+    FConexao: TFDConnection;
+    FDGUIxWaitCursor: TFDGUIxWaitCursor;
+    FDPhysDriverLink: TFDPhysDriverLink;
+    FDataBase: string;
+    FUserName: string;
+    FPassword: string;
+    FDriverID: string;
+    FServer: string;
+    FPort: Integer;
+    procedure LerParametros;
+  public
+    constructor Create(DriverLink: TFDPhysDriverLink);
+    destructor Destroy; override;
+    class function New(DriverLink: TFDPhysDriverLink): IModelConexao;
+    function EndConexao: TComponent;
+    function Conectar: IModelConexao;
+    function Parametros: IModelConexaoParametros;
+    function DataBase(Value: string): IModelConexaoParametros;
+    function UserName(Value: string): IModelConexaoParametros;
+    function Password(Value: string): IModelConexaoParametros;
+    function DriverID(Value: string): IModelConexaoParametros;
+    function Server(Value: string): IModelConexaoParametros;
+    function Port(Value: Integer): IModelConexaoParametros;
+    function EndParametros: IModelConexao;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelConexaoFiredac }
+
+function TModelConexaoFiredac.Conectar: IModelConexao;
+begin
+  Result := Self;
+    LerParametros;
+    FConexao.Connected := True;
+end;
+
+constructor TModelConexaoFiredac.Create(DriverLink: TFDPhysDriverLink);
+begin
+  FConexao := TFDConnection.Create(nil);
+  FDGUIxWaitCursor := TFDGUIxWaitCursor.Create(nil);
+  FDPhysDriverLink := DriverLink;
+
+end;
+
+function TModelConexaoFiredac.DataBase(Value: string): IModelConexaoParametros;
+begin
+  Result := Self;
+  FDataBase := Value;
+end;
+
+destructor TModelConexaoFiredac.Destroy;
+begin
+  FConexao.Free;
+  FDGUIxWaitCursor.Free;
+
+  inherited;
+end;
+
+function TModelConexaoFiredac.DriverID(Value: string): IModelConexaoParametros;
+begin
+  Result := Self;
+  FDriverID := Value;
+end;
+
+function TModelConexaoFiredac.EndConexao: TComponent;
+begin
+  Result := FConexao;
+end;
+
+function TModelConexaoFiredac.EndParametros: IModelConexao;
+begin
+  Result := Self;
+end;
+
+procedure TModelConexaoFiredac.LerParametros;
+begin
+  FConexao.Params.DataBase := FDataBase;
+  FConexao.Params.UserName := FUserName;
+  FConexao.Params.Password := FPassword;
+  FConexao.Params.DriverID := FDriverID;
+  FConexao.Params.Add('Server=' + FServer);
+  FConexao.Params.Add('Port=' + IntToStr(FPort));
+end;
+
+class function TModelConexaoFiredac.New(DriverLink: TFDPhysDriverLink): IModelConexao;
+begin
+  Result := Self.Create(DriverLink);
+end;
+
+function TModelConexaoFiredac.Parametros: IModelConexaoParametros;
+begin
+  Result := Self;
+end;
+
+function TModelConexaoFiredac.Password(Value: string): IModelConexaoParametros;
+begin
+  Result := Self;
+  FPassword := Value;
+end;
+
+function TModelConexaoFiredac.Port(Value: Integer): IModelConexaoParametros;
+begin
+  Result := Self;
+  FPort := Value;
+end;
+
+function TModelConexaoFiredac.Server(Value: string): IModelConexaoParametros;
+begin
+  Result := Self;
+  FServer := Value;
+end;
+
+function TModelConexaoFiredac.UserName(Value: string): IModelConexaoParametros;
+begin
+  Result := Self;
+  FUserName := Value;
+end;
+
+end.

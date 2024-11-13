@@ -1,0 +1,7 @@
+unit Menu.Model.Conexoes.FireDac.Interfaces;
+
+interface
+
+implementation
+
+end.

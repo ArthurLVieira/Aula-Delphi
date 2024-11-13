@@ -1,4 +1,4 @@
-unit Menu.Model.Conexoes.ConexaoFiredac;
+unit Menu.Model.Conexoes.FireDac.Conexao;
 
 interface
 
@@ -12,7 +12,7 @@ type
   private
     FConexao: TFDConnection;
     FDGUIxWaitCursor: TFDGUIxWaitCursor;
-    FDPhysFBDriverLink: TFDPhysFBDriverLink;
+    FDPhysDriverLink: TFDPhysDriverLink;
     FDataBase: string;
     FUserName: string;
     FPassword: string;
@@ -21,9 +21,9 @@ type
     FPort: Integer;
     procedure LerParametros;
   public
-    constructor Create;
+    constructor Create(DriverLink: TFDPhysDriverLink;);
     destructor Destroy; override;
-    class function New: IModelConexao;
+    class function New(DriverLink: TFDPhysDriverLink;): IModelConexao;
     function EndConexao: TComponent;
     function Conectar: IModelConexao;
     function Parametros: IModelConexaoParametros;
@@ -50,11 +50,11 @@ begin
     FConexao.Connected := True;
 end;
 
-constructor TModelConexaoFiredac.Create;
+constructor TModelConexaoFiredac.Create(DriverLink: TFDPhysDriverLink;);
 begin
   FConexao := TFDConnection.Create(nil);
   FDGUIxWaitCursor := TFDGUIxWaitCursor.Create(nil);
-  FDPhysFBDriverLink := TFDPhysFBDriverLink.Create(nil);
+  FDPhysDriverLink := DriverLink;
 
 end;
 
@@ -99,9 +99,9 @@ begin
   FConexao.Params.Add('Port=' + IntToStr(FPort));
 end;
 
-class function TModelConexaoFiredac.New: IModelConexao;
+class function TModelConexaoFiredac.New(DriverLink: TFDPhysDriverLink;): IModelConexao;
 begin
-  Result := Self.Create;
+  Result := Self.Create(DriverLink);
 end;
 
 function TModelConexaoFiredac.Parametros: IModelConexaoParametros;

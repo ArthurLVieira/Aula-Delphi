@@ -1,12 +1,14 @@
-unit Menu.Model.Conexoes.Factory.Conexao;
+unit Menu.Model.Conexoes.FireDac.Factory;
 
 interface
 
-uses Menu.Model.Conexoes.Interfaces;
+uses Menu.Model.Conexoes.FireDac.Interfaces;
+
+
 
 type
 
-  TModelConexoesFactoryConexao = class(TInterfacedObject, IModelFactoryConexao)
+  IModelConexaoFireDacFactory = class(TInterfacedObject, IModelFactoryConexao)
   private
 
   public

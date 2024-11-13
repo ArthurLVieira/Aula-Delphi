@@ -19,10 +19,9 @@ uses
   Menu.Controller.ListBox.Cliente in 'Controller\Menus\Menu.Controller.ListBox.Cliente.pas',
   Menu.Controller.Forms.Default in 'Controller\Forms\Menu.Controller.Forms.Default.pas',
   Menu.Model.Conexoes.Interfaces in 'Model\Conexoes\Menu.Model.Conexoes.Interfaces.pas',
-  Menu.Model.Conexoes.ConexaoFiredac in 'Model\Conexoes\Menu.Model.Conexoes.ConexaoFiredac.pas',
-  Menu.Model.Conexoes.TableFiredac in 'Model\Conexoes\Menu.Model.Conexoes.TableFiredac.pas',
-  Menu.Model.Conexoes.Factory.Conexao in 'Model\Conexoes\Menu.Model.Conexoes.Factory.Conexao.pas',
-  Menu.Model.Conexoes.Factory.DataSet in 'Model\Conexoes\Menu.Model.Conexoes.Factory.DataSet.pas',
+  Menu.Model.Conexoes.FireDac.Conexao in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Conexao.pas',
+  Menu.Model.Conexoes.DataSet.Conexao in 'Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Conexao.pas',
+  Menu.Model.Conexoes.DataSet.Factory in 'Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Factory.pas',
   Menu.Model.Entity.Interfaces in 'Model\Entity\Menu.Model.Entity.Interfaces.pas',
   Menu.Model.Entity.Produtos in 'Model\Entity\Menu.Model.Entity.Produtos.pas',
   Menu.Model.Entity.Cliente in 'Model\Entity\Menu.Model.Entity.Cliente.pas',
@@ -35,7 +34,15 @@ uses
   Menu.Controller.Entity.Factory in 'Controller\Entity\Menu.Controller.Entity.Factory.pas',
   Menu.Controller.Entity.Clientes in 'Controller\Entity\Menu.Controller.Entity.Clientes.pas',
   Menu.Controller.Conexoes.Factory.Conexao in 'Controller\Conexoes\Menu.Controller.Conexoes.Factory.Conexao.pas',
-  Menu.Model.Conexoes.Facade in 'Model\Conexoes\Menu.Model.Conexoes.Facade.pas';
+  Menu.Model.Conexoes.Facade in 'Model\Conexoes\Menu.Model.Conexoes.Facade.pas',
+  Menu.Controller.Entity.Facade in 'Controller\Entity\Menu.Controller.Entity.Facade.pas',
+  Menu.Controller.Conexoes.Facade in 'Controller\Conexoes\Menu.Controller.Conexoes.Facade.pas',
+  Menus.Controller.Interfaces in 'Controller\Menus.Controller.Interfaces.pas',
+  Menus.Controller.Facade in 'Controller\Menus.Controller.Facade.pas',
+  Menu.Controller.MenusFacade in 'Controller\Menus\Menu.Controller.MenusFacade.pas',
+  Menu.Model.Conexoes.FireDac.Factory in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Factory.pas',
+  Menu.Model.Conexoes.FireDac.Interfaces in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Interfaces.pas',
+  Menu.Model.Conexoes.DataSet.Interfaces in 'Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Interfaces.pas';
 
 {$R *.res}
 

@@ -1,4 +1,4 @@
-unit Menu.Model.Conexoes.TableFiredac;
+unit Menu.Model.Conexoes.DataSet.Conexao;
 
 interface
 
@@ -6,7 +6,7 @@ uses Menu.Model.Conexoes.Interfaces, FireDAC.Comp.Client, System.Classes;
 
 type
 
-  TModelConexoesTableFiredac = class(TInterfacedObject, IModelDataSet)
+  TModelConexoesDataSet = class(TInterfacedObject, IModelDataSet)
   private
     FTable: TFDTable;
   public
@@ -19,33 +19,33 @@ type
 
 implementation
 
-{ TModelConexoesTableFiredac }
+{ TModelConexoesDataSet }
 
-constructor TModelConexoesTableFiredac.Create(Conexao: IModelConexao);
+constructor TModelConexoesDataSet.Create(Conexao: IModelConexao);
 begin
   FTable := TFDTable.Create(nil);
   FTable.Connection := (Conexao.EndConexao as TFDConnection);
 end;
 
-destructor TModelConexoesTableFiredac.Destroy;
+destructor TModelConexoesDataSet.Destroy;
 begin
   FTable.Free;
 
   inherited;
 end;
 
-function TModelConexoesTableFiredac.EndDataSet: TComponent;
+function TModelConexoesDataSet.EndDataSet: TComponent;
 begin
   Result := FTable;
 end;
 
-class function TModelConexoesTableFiredac.New(Conexao: IModelConexao)
+class function TModelConexoesDataSet.New(Conexao: IModelConexao)
   : IModelDataSet;
 begin
   Result := Self.Create(Conexao);
 end;
 
-function TModelConexoesTableFiredac.Open(aTable: string): IModelDataSet;
+function TModelConexoesDataSet.Open(aTable: string): IModelDataSet;
 begin
   Result := Self;
   FTable.Open(aTable);
