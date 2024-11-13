@@ -51,6 +51,11 @@ type
     function AddItem(Value: TFmxObject): IControllerListBoxDefault;
     function Lista: TFmxObject;
     procedure Exibir;
+  end;
+
+  IControllerListBoxFacade = interface
+  ['{9AFE082D-066F-4439-8B69-E83F0BD86E3E}']
+  function ListBox : IControllerListBoxFactory;
 
   end;
 

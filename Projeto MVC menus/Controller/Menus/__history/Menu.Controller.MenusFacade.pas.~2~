@@ -1,0 +1,47 @@
+unit Menu.Controller.MenusFacade;
+
+interface
+
+uses
+  Menu.Controller.Interfaces;
+
+type
+
+  TControllerMenusFacade = class(TInterfacedObject, IControllerListBoxFacade)
+  private
+    FMenus: IControllerListBoxFactory;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerListBoxFacade;
+    function Menus: IControllerListBoxFactory;
+  end;
+
+implementation
+
+{ TControllerMenusFacade }
+
+uses Menu.Controller.ListBox.Factory;
+
+constructor TControllerMenusFacade.Create;
+begin
+  FMenus := TControllerListBoxFactory.New;
+end;
+
+destructor TControllerMenusFacade.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerMenusFacade.Menus: IControllerListBoxFactory;
+begin
+  Result := FMenus;
+end;
+
+class function TControllerMenusFacade.New: IControllerListBoxFacade;
+begin
+  Result := Self.Create;
+end;
+
+end.

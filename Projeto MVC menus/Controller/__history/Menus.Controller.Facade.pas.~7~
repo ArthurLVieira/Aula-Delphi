@@ -1,0 +1,56 @@
+unit Menus.Controller.Facade;
+
+interface
+
+uses
+  Menus.Controller.Interfaces, Menu.Controller.Conexoes.Interfaces,
+  Menu.Controller.Entity.Interfaces;
+
+type
+
+  TControllerFacade = class(TInterfacedObject, IControllerFacade)
+  private
+    FConnexao: IControllerConexoesFacade;
+    FEntity: IControllerEntityFacade;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerFacade;
+    function Conexao: IControllerConexoesFacade;
+    function Entity: IControllerEntityFacade;
+  end;
+
+implementation
+
+{ TControllerFacade }
+
+uses Menu.Controller.Conexoes.Facade, Menu.Controller.Entity.Facade;
+
+constructor TControllerFacade.Create;
+begin
+  FConnexao := TControllerConexoesFacade.New;
+  FEntity := TControllerEntityFacade.New;
+end;
+
+destructor TControllerFacade.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerFacade.Entity: IControllerEntityFacade;
+begin
+  Result := FEntity;
+end;
+
+class function TControllerFacade.New: IControllerFacade;
+begin
+  Result := Self.Create;
+end;
+
+function TControllerFacade.Conexao: IControllerConexoesFacade;
+begin
+  Result := FConnexao;
+end;
+
+end.

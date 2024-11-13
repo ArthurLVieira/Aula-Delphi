@@ -354,6 +354,7 @@
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Facade.pas"/>
         <DCCReference Include="Controller\Menus.Controller.Interfaces.pas"/>
         <DCCReference Include="Controller\Menus.Controller.Facade.pas"/>
+        <DCCReference Include="Controller\Menus\Menu.Controller.MenusFacade.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

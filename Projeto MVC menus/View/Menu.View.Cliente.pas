@@ -37,14 +37,18 @@ implementation
 
 {$R *.fmx}
 
-uses Menu.Controller.ListBox.Factory;
+uses Menu.Controller.ListBox.Factory, Menus.Controller.Facade;
 
 
 procedure TFrmCliente.FormCreate(Sender: TObject);
 begin
-  TControllerListBoxFactory.New.Cliente(Layout1).Exibir;
-  FEntity := TControllerEntityFactory.New.Clientes;
-  FEntity.Lista(DataSource1);
+  TControllerFacade.New.Menus.Menus.Cliente(Layout1).Exibir;
+
+
+//  TControllerListBoxFactory.New.Cliente(Layout1).Exibir;
+//  FEntity := TControllerEntityFactory.New.Clientes;
+//  FEntity.Lista(DataSource1);
+
 end;
 
 initialization

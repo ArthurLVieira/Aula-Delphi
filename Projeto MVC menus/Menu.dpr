@@ -39,7 +39,8 @@ uses
   Menu.Controller.Entity.Facade in 'Controller\Entity\Menu.Controller.Entity.Facade.pas',
   Menu.Controller.Conexoes.Facade in 'Controller\Conexoes\Menu.Controller.Conexoes.Facade.pas',
   Menus.Controller.Interfaces in 'Controller\Menus.Controller.Interfaces.pas',
-  Menus.Controller.Facade in 'Controller\Menus.Controller.Facade.pas';
+  Menus.Controller.Facade in 'Controller\Menus.Controller.Facade.pas',
+  Menu.Controller.MenusFacade in 'Controller\Menus\Menu.Controller.MenusFacade.pas';
 
 {$R *.res}
 
