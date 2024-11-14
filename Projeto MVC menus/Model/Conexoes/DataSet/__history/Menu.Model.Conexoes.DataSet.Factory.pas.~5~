@@ -2,8 +2,6 @@ unit Menu.Model.Conexoes.DataSet.Factory;
 
 interface
 
-
-
 uses Menu.Model.Conexoes.DataSet.Interfaces,
   Menu.Model.Conexoes.FireDac.Interfaces, System.Classes;
 
