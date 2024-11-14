@@ -1,0 +1,22 @@
+unit Menu.Controller.Conexoes.DataSet;
+
+interface
+
+uses
+  Menu.Controller.Conexoes.DataSet.Interfaces;
+
+type
+
+  TControllerConexoesDataSet = class(TInterfacedObject,
+    IControllerConexoesDataSet)
+  private
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerConexoesDataSet;
+  end;
+
+implementation
+
+end.

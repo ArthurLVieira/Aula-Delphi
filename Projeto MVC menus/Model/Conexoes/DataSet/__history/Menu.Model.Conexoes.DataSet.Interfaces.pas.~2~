@@ -15,7 +15,7 @@ type
 
   IModelConexoesDataSetFactory = interface
     ['{15071BD9-5853-4134-8FF6-2CD0F4E49172}']
-    function DataSet(Conexao: TComponent): IModelConexoesDataSet;
+    function DataSetFiredac(Conexao: IModelConexaoFireDac): IModelConexoesDataSet;
   end;
 
 implementation

@@ -40,7 +40,7 @@ end;
 
 function TModelConexoesFacade.DataSet: IModelConexoesDataSetFactory;
 begin
-  FDataSet := TModelConexoesDataSetFactory.New;
+  FDataSet := TModelConexoesFactoryDataSet.New;
   Result := FDataSet;
 end;
 

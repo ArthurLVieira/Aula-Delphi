@@ -11,9 +11,9 @@ type
   private
     FTable: TFDTable;
   public
-    constructor Create(Conexao: TComponent);
+    constructor Create(Conexao: IModelConexaoFireDac);
     destructor Destroy; override;
-    class function New(Conexao: TComponent): IModelConexoesDataSet;
+    class function New(Conexao: IModelConexaoFireDac): IModelConexoesDataSet;
     function Open(aTable: string): IModelConexoesDataSet;
     function EndDataSet: TComponent;
   end;
@@ -22,10 +22,10 @@ implementation
 
 { TModelConexoesDataSet }
 
-constructor TModelConexoesDataSet.Create(Conexao: TComponent);
+constructor TModelConexoesDataSet.Create(Conexao: IModelConexaoFireDac);
 begin
   FTable := TFDTable.Create(nil);
-  FTable.Connection := (Conexao as TFDConnection);
+  FTable.Connection := (Conexao.EndConexao as TFDConnection);
 end;
 
 destructor TModelConexoesDataSet.Destroy;
@@ -40,7 +40,7 @@ begin
   Result := FTable;
 end;
 
-class function TModelConexoesDataSet.New(Conexao: TComponent)
+class function TModelConexoesDataSet.New(Conexao: IModelConexaoFireDac)
   : IModelConexoesDataSet;
 begin
   Result := Self.Create(Conexao);

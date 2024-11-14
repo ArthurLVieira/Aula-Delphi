@@ -1,4 +1,4 @@
-unit Menu.Controller.Entity.Produtos;
+unit Menu.Controller.Entity.Clientes;
 
 interface
 
@@ -7,7 +7,7 @@ uses Menu.Controller.Entity.Interfaces, Menu.Model.Conexoes.Interfaces,
 
 type
 
-  TControllerEntityProdutos = class(TInterfacedObject, IControllerEntity)
+  TControllerEntityCliente = class(TInterfacedObject, IControllerEntity)
   private
     FFacade: IModelConexoesFacade;
     FEntity: IModelEntity;
@@ -20,33 +20,30 @@ type
 
 implementation
 
-{ TControllerEntityProdutos }
+{ TControllerEntityCliente }
 
 uses Menu.Model.Conexoes.Facade;
 
-constructor TControllerEntityProdutos.Create;
+constructor TControllerEntityCliente.Create;
 begin
   FFacade := TModelConexoesFacade.New;
-
-  FFacade.DataSet.DataSetFiredac(FFacade.Conexao.FireDac())
-  FEntity := TModelEntityFactory.New.Produtos();
-
+  FEntity := TModelEntityFactory.New.Cliente(FFacade.iDataSet);
 end;
 
-destructor TControllerEntityProdutos.Destroy;
+destructor TControllerEntityCliente.Destroy;
 begin
 
   inherited;
 end;
 
-function TControllerEntityProdutos.Lista(aDataSource: TDataSource)
+function TControllerEntityCliente.Lista(aDataSource: TDataSource)
   : IControllerEntity;
 begin
   Result := Self;
   aDataSource.DataSet := TDataSet(FEntity.Listar);
 end;
 
-class function TControllerEntityProdutos.New: IControllerEntity;
+class function TControllerEntityCliente.New: IControllerEntity;
 begin
   Result := Self.Create;
 end;

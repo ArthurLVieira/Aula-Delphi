@@ -33,7 +33,7 @@ end;
 function TControllerConexoesDataSet.DataSet(
   Conexao: TComponent): IModelConexoesDataSet;
 begin
-  Result := TModelConexoesDataSetFactory.New.DataSet(Conexao);
+  Result := TModelConexoesDataSetFactory.New.
 end;
 
 destructor TControllerConexoesDataSet.Destroy;

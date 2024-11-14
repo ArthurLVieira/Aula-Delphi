@@ -14,7 +14,7 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IModelConexoesDataSetFactory;
-    function DataSet(Conexao: TComponent): IModelConexoesDataSet;
+    function DataSetFiredac(Conexao: TComponent): IModelConexoesDataSet;
   end;
 
 implementation
@@ -28,7 +28,7 @@ begin
 
 end;
 
-function TModelConexoesDataSetFactory.DataSet(Conexao: TComponent): IModelConexoesDataSet;
+function TModelConexoesDataSetFactory.DataSetFiredac(Conexao: TComponent): IModelConexoesDataSet;
 begin
   Result := TModelConexoesDataSet.New(Conexao);
 end;
