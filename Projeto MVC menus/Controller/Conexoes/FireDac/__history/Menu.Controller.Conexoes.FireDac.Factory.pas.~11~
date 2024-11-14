@@ -1,0 +1,48 @@
+unit Menu.Controller.Conexoes.FireDac.Factory;
+
+interface
+
+uses Menu.Controller.Conexoes.FireDac.Interfaces;
+
+type
+
+  TControllerConexoesFireDacFactory = class(TInterfacedObject,
+    IControllerConexoesFireDacFactory)
+  private
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IControllerConexoesFireDacFactory;
+    function Postegres: IControllerConexoesFireDacPostegres;
+  end;
+
+implementation
+
+{ TControllerConexoesFireDacFactory }
+
+uses Menu.Controller.Conexoes.FireDac.Postgres;
+
+constructor TControllerConexoesFireDacFactory.Create;
+begin
+
+end;
+
+destructor TControllerConexoesFireDacFactory.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConexoesFireDacFactory.New
+  : IControllerConexoesFireDacFactory;
+begin
+  Result := Self.Create;
+end;
+
+function TControllerConexoesFireDacFactory.Postegres: IControllerConexoesFireDacPostegres;
+begin
+  Result := TControllerConexoesFireDacPostegres.New;
+end;
+
+end.

@@ -332,7 +332,7 @@
         <DCCReference Include="Model\Entity\Menu.Model.Entity.Produtos.pas"/>
         <DCCReference Include="Model\Entity\Menu.Model.Entity.Cliente.pas"/>
         <DCCReference Include="Model\Entity\Menu.Model.Entity.Factory.pas"/>
-        <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.FireDac.pas"/>
+        <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Factory.pas"/>
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Interfaces.pas"/>
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Factory.FireDac.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Interfaces.pas"/>
@@ -350,6 +350,8 @@
         <DCCReference Include="Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Interfaces.pas"/>
         <DCCReference Include="Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Interfaces.pas"/>
         <DCCReference Include="Model\Menu.Model.Facade.pas"/>
+        <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Interfaces.pas"/>
+        <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Postgres.pas"/>
         <None Include="ModelSupport_Menu\default.txaPackage"/>
         <None Include="ModelSupport_Menu\default.txvpck"/>
         <None Include="ModelSupport_Menu\Menu\default.txvpck"/>

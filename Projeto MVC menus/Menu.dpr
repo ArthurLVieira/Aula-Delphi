@@ -26,7 +26,7 @@ uses
   Menu.Model.Entity.Produtos in 'Model\Entity\Menu.Model.Entity.Produtos.pas',
   Menu.Model.Entity.Cliente in 'Model\Entity\Menu.Model.Entity.Cliente.pas',
   Menu.Model.Entity.Factory in 'Model\Entity\Menu.Model.Entity.Factory.pas',
-  Menu.Controller.Conexoes.FireDac in 'Controller\Conexoes\Menu.Controller.Conexoes.FireDac.pas',
+  Menu.Controller.Conexoes.FireDac.Factory in 'Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Factory.pas',
   Menu.Controller.Conexoes.Interfaces in 'Controller\Conexoes\Menu.Controller.Conexoes.Interfaces.pas',
   Menu.Controller.Conexoes.Factory.FireDac in 'Controller\Conexoes\Menu.Controller.Conexoes.Factory.FireDac.pas',
   Menu.Controller.Entity.Interfaces in 'Controller\Entity\Menu.Controller.Entity.Interfaces.pas',
@@ -43,7 +43,9 @@ uses
   Menu.Model.Conexoes.Factory in 'Model\Conexoes\Menu.Model.Conexoes.Factory.pas',
   Menu.Model.Conexoes.FireDac.Interfaces in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Interfaces.pas',
   Menu.Model.Conexoes.DataSet.Interfaces in 'Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Interfaces.pas',
-  Menu.Model.Facade in 'Model\Menu.Model.Facade.pas';
+  Menu.Model.Facade in 'Model\Menu.Model.Facade.pas',
+  Menu.Controller.Conexoes.FireDac.Interfaces in 'Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Interfaces.pas',
+  Menu.Controller.Conexoes.FireDac.Postgres in 'Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Postgres.pas';
 
 {$R *.res}
 

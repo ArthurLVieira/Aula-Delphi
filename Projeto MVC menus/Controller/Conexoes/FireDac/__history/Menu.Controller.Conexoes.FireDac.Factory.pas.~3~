@@ -1,4 +1,4 @@
-unit Menu.Controller.Conexoes.FireDac;
+unit Menu.Controller.Conexoes.FireDac.Factory;
 
 interface
 
@@ -19,22 +19,6 @@ type
 implementation
 
 { TControllerConexoesFireDac }
-
-uses Menu.Model.Conexoes.Factory.Conexao;
-
-function TControllerConexoesFireDac.ConexaoFireDacMySql: IModelConexao;
-begin
-  Result := TModelConexoesFactoryConexao.New.ConexaoFiredac.Parametros.DataBase
-    ('').UserName('').Password('').DriverID('').Server('').Port(0)
-    .EndParametros.Conectar;
-end;
-
-function TControllerConexoesFireDac.ConexaoFireDacPostegres: IModelConexao;
-begin
-  Result := TModelConexoesFactoryConexao.New.ConexaoFiredac.Parametros.DataBase
-    ('').UserName('').Password('').DriverID('').Server('').Port(0)
-    .EndParametros.Conectar;
-end;
 
 constructor TControllerConexoesFireDac.Create;
 begin

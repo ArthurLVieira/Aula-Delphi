@@ -32,8 +32,4 @@ object FrmPrincipal: TFrmPrincipal
       TabOrder = 0
     end
   end
-  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
-    Left = 408
-    Top = 232
-  end
 end
