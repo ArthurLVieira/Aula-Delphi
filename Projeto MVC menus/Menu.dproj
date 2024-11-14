@@ -339,7 +339,7 @@
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Produtos.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Factory.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Clientes.pas"/>
-        <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Factory.Conexao.pas"/>
+        <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Factory.pas"/>
         <DCCReference Include="Model\Conexoes\Menu.Model.Conexoes.Facade.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Facade.pas"/>
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Facade.pas"/>
@@ -352,6 +352,8 @@
         <DCCReference Include="Model\Menu.Model.Facade.pas"/>
         <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Interfaces.pas"/>
         <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Postgres.pas"/>
+        <DCCReference Include="Controller\Conexoes\DataSet\Menu.Controller.Conexoes.DataSet.pas"/>
+        <DCCReference Include="Controller\Conexoes\DataSet\Menu.Controller.Conexoes.DataSet.Interfaces.pas"/>
         <None Include="ModelSupport_Menu\default.txaPackage"/>
         <None Include="ModelSupport_Menu\default.txvpck"/>
         <None Include="ModelSupport_Menu\Menu\default.txvpck"/>

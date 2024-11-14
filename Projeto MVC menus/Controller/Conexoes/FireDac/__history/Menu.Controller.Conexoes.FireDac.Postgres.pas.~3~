@@ -16,7 +16,7 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IControllerConexoesFireDacPostegres;
-    function Conexao: IModelConexaoFireDac;
+    function Postegres: IModelConexaoFireDac;
   end;
 
 implementation
@@ -42,7 +42,7 @@ begin
   Result := Self.Create;
 end;
 
-function TControllerConexoesFireDacPostegres.Conexao: IModelConexaoFireDac;
+function TControllerConexoesFireDacPostegres.Postegres: IModelConexaoFireDac;
 begin
   Result := TModelConexoesFacade.New.Conexao
     .FireDac(FDPhysPgDriverLink)

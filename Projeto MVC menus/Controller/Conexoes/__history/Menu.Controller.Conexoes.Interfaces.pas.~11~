@@ -3,8 +3,7 @@ unit Menu.Controller.Conexoes.Interfaces;
 interface
 
 uses Menu.Controller.Conexoes.FireDac.Interfaces,
-  Menu.Model.Conexoes.FireDac.Interfaces,
-  Menu.Model.Conexoes.DataSet.Interfaces;
+  Menu.Model.Conexoes.FireDac.Interfaces;
 
 type
 
@@ -15,7 +14,7 @@ type
 
   IControllerConexoesFactoryDataSet = interface
     ['{3D9FC384-5854-4598-86B4-8E0DD2ADD674}']
-    function DataSet(Conexao: IModelConexaoFireDac): IModelConexoesDataSet;
+    function DataSet(Conexao: IModelConexaoFireDac): IModelDataSet;
   end;
 
   IControllerConexoesFacade = interface
