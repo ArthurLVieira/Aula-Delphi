@@ -11,6 +11,7 @@ type
   TModelConexaoFiredac = class(TInterfacedObject, IModelConexaoFireDac,
     IModelConexaoParametrosFireDac)
   private
+    class var FInstance : TModelConexaoFiredac;
     FConexao: TFDConnection;
     FDGUIxWaitCursor: TFDGUIxWaitCursor;
     FDPhysDriverLink: TFDPhysDriverLink;
@@ -102,7 +103,9 @@ end;
 class function TModelConexaoFiredac.New(DriverLink: TFDPhysDriverLink)
   : IModelConexaoFireDac;
 begin
-  Result := Self.Create(DriverLink);
+  if not Assigned(FInstance) then
+    FInstance := Self.Create(DriverLink);
+  Result := FInstance;
 end;
 
 function TModelConexaoFiredac.Parametros: IModelConexaoParametrosFireDac;

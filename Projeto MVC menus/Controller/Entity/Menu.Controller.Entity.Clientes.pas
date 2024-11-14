@@ -10,7 +10,7 @@ type
 
   TControllerEntityCliente = class(TInterfacedObject, IControllerEntity)
   private
-  FFacade : IModelConexoesFacade;
+    FFacade: IModelConexoesFacade;
     FEntity: IModelEntity;
   public
     constructor Create;
@@ -37,8 +37,8 @@ begin
   inherited;
 end;
 
-function TControllerEntityCliente.Lista(
-  aDataSource: TDataSource): IControllerEntity;
+function TControllerEntityCliente.Lista(aDataSource: TDataSource)
+  : IControllerEntity;
 begin
   Result := Self;
   aDataSource.DataSet := TDataSet(FEntity.Listar);

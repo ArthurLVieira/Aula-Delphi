@@ -40,7 +40,7 @@ uses
   Menus.Controller.Interfaces in 'Controller\Menus.Controller.Interfaces.pas',
   Menus.Controller.Facade in 'Controller\Menus.Controller.Facade.pas',
   Menu.Controller.MenusFacade in 'Controller\Menus\Menu.Controller.MenusFacade.pas',
-  Menu.Model.Conexoes.FireDac.Factory in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Factory.pas',
+  Menu.Model.Conexoes.Factory in 'Model\Conexoes\Menu.Model.Conexoes.Factory.pas',
   Menu.Model.Conexoes.FireDac.Interfaces in 'Model\Conexoes\FareDac\Menu.Model.Conexoes.FireDac.Interfaces.pas',
   Menu.Model.Conexoes.DataSet.Interfaces in 'Model\Conexoes\DataSet\Menu.Model.Conexoes.DataSet.Interfaces.pas',
   Menu.Model.Facade in 'Model\Menu.Model.Facade.pas';

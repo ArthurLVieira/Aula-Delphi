@@ -7,7 +7,7 @@ uses Menu.Model.Conexoes.DataSet.Interfaces,
 
 type
 
-  TModelConexoesFactoryDataSet = class(TInterfacedObject, IModelConexoesDataSetFactory)
+  TModelConexoesDataSetFactory = class(TInterfacedObject, IModelConexoesDataSetFactory)
   private
 
   public
@@ -19,29 +19,32 @@ type
 
 implementation
 
-{ TModelConexoesFactoryDataSet }
+{ TModelConexoesDataSetFactory }
 
 uses Menu.Model.Conexoes.DataSet.Conexao;
 
-constructor TModelConexoesFactoryDataSet.Create;
+constructor TModelConexoesDataSetFactory.Create;
 begin
 
 end;
 
-function TModelConexoesFactoryDataSet.DataSetFiredac(Conexao: IModelConexaoFireDac): IModelConexoesDataSet;
+function TModelConexoesDataSetFactory.DataSetFiredac(Conexao: IModelConexaoFireDac): IModelConexoesDataSet;
 begin
   Result := TModelConexoesDataSet.New(Conexao);
 end;
 
-destructor TModelConexoesFactoryDataSet.Destroy;
+destructor TModelConexoesDataSetFactory.Destroy;
 begin
 
   inherited;
 end;
 
-class function TModelConexoesFactoryDataSet.New: IModelConexoesDataSetFactory;
+class function TModelConexoesDataSetFactory.New: IModelConexoesDataSetFactory;
 begin
   Result := Self.Create;
 end;
 
 end.
+
+
+

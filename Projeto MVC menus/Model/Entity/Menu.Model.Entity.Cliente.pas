@@ -3,17 +3,17 @@ unit Menu.Model.Entity.Cliente;
 interface
 
 uses Menu.Model.Entity.Interfaces, System.Classes,
-  Menu.Model.Conexoes.Interfaces;
+  Menu.Model.Conexoes.DataSet.Interfaces;
 
 type
 
   TModelEntytiCliente = class(TInterfacedObject, IModelEntity)
   private
-    FDataSet: IModelDataSet;
+    FDataSet: IModelConexoesDataSet;
   public
-    constructor Create(DataSet: IModelDataSet);
+    constructor Create(DataSet: IModelConexoesDataSet);
     destructor Destroy; override;
-    class function New(DataSet: IModelDataSet): IModelEntity;
+    class function New(DataSet: IModelConexoesDataSet): IModelEntity;
     function Listar: TComponent;
   end;
 
@@ -24,7 +24,7 @@ const
 
   { TModelEntytiCliente }
 
-constructor TModelEntytiCliente.Create(DataSet: IModelDataSet);
+constructor TModelEntytiCliente.Create(DataSet: IModelConexoesDataSet);
 begin
   FDataSet := DataSet;
 end;
@@ -37,10 +37,11 @@ end;
 
 function TModelEntytiCliente.Listar: TComponent;
 begin
- Result := FDataSet.Open(FTABLENAME).EndDataSet;
+  Result := FDataSet.Open(FTABLENAME).EndDataSet;
 end;
 
-class function TModelEntytiCliente.New(DataSet: IModelDataSet): IModelEntity;
+class function TModelEntytiCliente.New(DataSet: IModelConexoesDataSet)
+  : IModelEntity;
 begin
   Result := Self.Create(DataSet);
 end;

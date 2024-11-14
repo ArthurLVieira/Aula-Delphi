@@ -27,11 +27,6 @@ type
     function Parametros: IModelConexaoParametrosFireDac;
   end;
 
-  IModelConexaoFireDacFactory = interface
-    ['{AD653E36-A584-490F-8949-334263E5433E}']
-    function Firedac(DriverLink: TFDPhysDriverLink): IModelConexaoFireDac;
-  end;
-
 
 
 

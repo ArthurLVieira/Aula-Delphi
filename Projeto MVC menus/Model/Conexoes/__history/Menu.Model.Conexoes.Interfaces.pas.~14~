@@ -1,0 +1,22 @@
+unit Menu.Model.Conexoes.Interfaces;
+
+interface
+
+uses
+  Menu.Model.Conexoes.FireDac.Interfaces, FireDAC.Phys;
+
+type
+
+  IModelConexoesFacade = interface
+    ['{9BF3ED7B-ABCE-4459-A609-6564A5855C4B}']
+    function DataSet: IModelConexaoFireDacFactory;
+  end;
+
+    IModelConexaoFactory = interface
+    ['{AD653E36-A584-490F-8949-334263E5433E}']
+    function Firedac(DriverLink: TFDPhysDriverLink): IModelConexaoFireDac;
+  end;
+
+implementation
+
+end.

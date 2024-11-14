@@ -3,18 +3,18 @@ unit Menu.Model.Entity.Produtos;
 interface
 
 uses Menu.Model.Entity.Interfaces, System.Classes,
-  Menu.Model.Conexoes.Interfaces;
+  Menu.Model.Conexoes.DataSet.Interfaces;
 
 type
 
   TModelEntityProdutos = class(TInterfacedObject, IModelEntity)
   private
-    FDataSet : IModelDataSet;
+    FDataSet: IModelConexoesDataSet;
   public
-    constructor Create(DataSet : IModelDataSet);
+    constructor Create(DataSet: IModelConexoesDataSet);
     destructor Destroy; override;
-    class function New(DataSet : IModelDataSet): IModelEntity;
-    function Listar : TComponent;
+    class function New(DataSet: IModelConexoesDataSet): IModelEntity;
+    function Listar: TComponent;
   end;
 
 implementation
@@ -22,9 +22,9 @@ implementation
 const
   FTABLENAME = 'PRODUTOS';
 
-{ TModelEntityProdutos }
+  { TModelEntityProdutos }
 
-constructor TModelEntityProdutos.Create(DataSet : IModelDataSet);
+constructor TModelEntityProdutos.Create(DataSet: IModelConexoesDataSet);
 begin
   FDataSet := DataSet;
 end;
@@ -40,7 +40,8 @@ begin
   Result := FDataSet.Open(FTABLENAME).EndDataSet;
 end;
 
-class function TModelEntityProdutos.New(DataSet : IModelDataSet): IModelEntity;
+class function TModelEntityProdutos.New(DataSet: IModelConexoesDataSet)
+  : IModelEntity;
 begin
   Result := Self.Create(DataSet);
 end;

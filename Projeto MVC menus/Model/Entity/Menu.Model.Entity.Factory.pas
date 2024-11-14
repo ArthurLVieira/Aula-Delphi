@@ -2,7 +2,8 @@ unit Menu.Model.Entity.Factory;
 
 interface
 
-uses Menu.Model.Entity.Interfaces, Menu.Model.Conexoes.Interfaces;
+uses Menu.Model.Entity.Interfaces,
+  Menu.Model.Conexoes.DataSet.Interfaces;
 
 type
 
@@ -13,8 +14,8 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IModelEntityFactory;
-    function Produtos(DataSet: IModelDataSet): IModelEntity;
-    function Cliente(DataSet: IModelDataSet): IModelEntity;
+    function Produtos(DataSet: IModelConexoesDataSet): IModelEntity;
+    function Cliente(DataSet: IModelConexoesDataSet): IModelEntity;
   end;
 
 implementation
@@ -23,7 +24,8 @@ implementation
 
 uses Menu.Model.Entity.Produtos, Menu.Model.Entity.Cliente;
 
-function TModelEntityFactory.Cliente(DataSet: IModelDataSet): IModelEntity;
+function TModelEntityFactory.Cliente(DataSet: IModelConexoesDataSet)
+  : IModelEntity;
 begin
   Result := TModelEntytiCliente.New(DataSet);
 end;
@@ -44,7 +46,8 @@ begin
   Result := Self.Create;
 end;
 
-function TModelEntityFactory.Produtos(DataSet: IModelDataSet): IModelEntity;
+function TModelEntityFactory.Produtos(DataSet: IModelConexoesDataSet)
+  : IModelEntity;
 begin
   Result := TModelEntityProdutos.New(DataSet);
 

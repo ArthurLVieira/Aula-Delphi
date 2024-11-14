@@ -1,25 +1,25 @@
-unit Menu.Model.Conexoes.FireDac.Factory;
+unit Menu.Model.Conexoes.Factory;
 
 interface
 
-uses Menu.Model.Conexoes.FireDac.Interfaces, FireDac.Phys;
+uses Menu.Model.Conexoes.Interfaces, FireDac.Phys;
 
 type
 
   TModelConexaoFireDacFactory = class(TInterfacedObject,
-    IModelConexaoFireDacFactory)
+    IModelConexao)
   private
 
   public
     constructor Create;
     destructor Destroy; override;
-    class function New: IModelConexaoFireDacFactory;
+    class function New: IModelConexao;
     function FireDac(DriverLink: TFDPhysDriverLink): IModelConexaoFireDac;
   end;
 
 implementation
 
-{ IModelConexaoFireDacFactory }
+{ IModelConexao }
 
 uses Menu.Model.Conexoes.FireDac.Conexao;
 
@@ -35,7 +35,7 @@ begin
 end;
 
 
-class function TModelConexaoFireDacFactory.New: IModelConexaoFireDacFactory;
+class function TModelConexaoFireDacFactory.New: IModelConexao;
 begin
   Result := Self.Create;
 end;

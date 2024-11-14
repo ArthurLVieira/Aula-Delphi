@@ -1,0 +1,54 @@
+unit Menu.Model.Conexoes.Facade;
+
+interface
+
+uses Menu.Model.Conexoes.Interfaces, Menu.Model.Conexoes.FireDac.Interfaces;
+
+type
+
+  TModelConexoesFacade = class(TInterfacedObject, IModelConexoesFacade)
+  private
+    FConexao: IModelConexaoFactory;
+    FDataSet: IModelDataSet;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IModelConexoesFacade;
+    function DataSet: IModelConexaoFireDacFactory;
+    function Conexao: IModelConexaoFactory;
+  end;
+
+implementation
+
+{ TModelConexoesFacade }
+
+uses Menu.Model.Conexoes.Factory , Menu.Model.Conexoes.Factory.DataSet;
+
+constructor TModelConexoesFacade.Create;
+begin
+  FConexao := IModelConexaoFactory.New.Firedac()
+  FDataSet := TModelConexoesFactoryDataSet.New.DataSetFiredac(FConexao);
+end;
+
+destructor TModelConexoesFacade.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelConexoesFacade.iConexao: IModelConexaoFactory;
+begin
+  Result := FConexao;
+end;
+
+function TModelConexoesFacade.iDataSet: IModelDataSet;
+begin
+  Result := FDataSet;
+end;
+
+class function TModelConexoesFacade.New: IModelConexoesFacade;
+begin
+  Result := Self.Create;
+end;
+
+end.
