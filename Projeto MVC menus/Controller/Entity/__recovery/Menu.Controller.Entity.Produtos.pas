@@ -27,7 +27,10 @@ uses Menu.Model.Conexoes.Facade;
 constructor TControllerEntityProdutos.Create;
 begin
   FFacade := TModelConexoesFacade.New;
+
+  FFacade.DataSet.DataSetFiredac(FFacade.Conexao.FireDac())
   FEntity := TModelEntityFactory.New.Produtos();
+
 end;
 
 destructor TControllerEntityProdutos.Destroy;

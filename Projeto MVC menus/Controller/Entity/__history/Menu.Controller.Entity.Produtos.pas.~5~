@@ -3,6 +3,7 @@ unit Menu.Controller.Entity.Produtos;
 interface
 
 uses Menu.Controller.Entity.Interfaces, Menu.Model.Conexoes.Interfaces,
+  Menu.Model.Conexoes.Factory.Conexao, Menu.Model.Conexoes.Factory.DataSet,
   Menu.Model.Entity.Interfaces, Menu.Model.Entity.Factory, Data.DB;
 
 type
@@ -27,7 +28,7 @@ uses Menu.Model.Conexoes.Facade;
 constructor TControllerEntityProdutos.Create;
 begin
   FFacade := TModelConexoesFacade.New;
-  FEntity := TModelEntityFactory.New.Produtos();
+  FEntity := TModelEntityFactory.New.Produtos(FFacade.iDataSet);
 end;
 
 destructor TControllerEntityProdutos.Destroy;
