@@ -135,7 +135,10 @@
     <Transaction>2024/11/14 12:41:00.000.195,C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Unit1.pas=C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Controller\Conexoes\DataSet\Menu.Controller.Conexoes.DataSet.pas</Transaction>
     <Transaction>2024/11/14 12:41:30.000.938,=C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Unit1.pas</Transaction>
     <Transaction>2024/11/14 12:41:53.000.597,C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Unit1.pas=C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Controller\Conexoes\DataSet\Menu.Controller.Conexoes.DataSet.Interfaces.pas</Transaction>
+<<<<<<< HEAD
     <Transaction>2024/11/15 09:56:05.504,C:\Users\user\Documents\GitHub\Aula-Delphi\Projeto MVC menus\Controller\Conexoes\Menu.Controller.Conexoes.Factory.FireDac.pas=</Transaction>
+=======
+>>>>>>> 7713c94857b86775d3b34f6ac12d8f84b1813734
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="activity-1.7.2.dex.jar"/>
