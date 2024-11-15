@@ -4,7 +4,7 @@ interface
 
 uses
   Menu.Controller.Conexoes.FireDac.Interfaces, FireDac.Phys,
-  Menu.Model.Conexoes.FireDac.Interfaces, FireDac.Phys.PG;
+  Menu.Model.Conexoes.FireDac.Interfaces, FireDAC.Phys.PG;
 
 type
 
@@ -16,7 +16,7 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IControllerConexoesFireDac;
-    function Conectar: IModelConexaoFireDac;
+    function Conexao: IModelConexaoFireDac;
   end;
 
 implementation
@@ -27,12 +27,11 @@ uses Menu.Model.Conexoes.Facade;
 
 constructor TControllerConexoesFireDacPostegres.Create;
 begin
-  FDPhysPgDriverLink := TFDPhysPgDriverLink.Create(nil);
+
 end;
 
 destructor TControllerConexoesFireDacPostegres.Destroy;
 begin
-  FDPhysPgDriverLink.Free;
 
   inherited;
 end;
@@ -43,18 +42,19 @@ begin
   Result := Self.Create;
 end;
 
-function TControllerConexoesFireDacPostegres.Conectar: IModelConexaoFireDac;
+function TControllerConexoesFireDacPostegres.Conexao: IModelConexaoFireDac;
 begin
-  Result := TModelConexoesFacade.New
-    .Conexao
-      .FireDac(FDPhysPgDriverLink)
+  Result := TModelConexoesFacade.New.Conexao
+    .FireDac(FDPhysPgDriverLink)
       .Parametros
         .DataBase('')
         .UserName('')
         .Password('')
         .DriverID('PG')
         .Server('')
-      .Port(5401).EndParametros.Conectar;
+        .Port(5401)
+        .EndParametros
+      .Conectar;
 end;
 
 end.

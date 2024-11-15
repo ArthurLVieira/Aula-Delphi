@@ -14,7 +14,7 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IControllerConexoesFireDacFactory;
-    function Conexao(Tipo: TTipoBanco): IControllerConexoesFireDac;
+    function Postegres: IControllerConexoesFireDacPostegres;
   end;
 
 implementation
@@ -40,16 +40,10 @@ begin
   Result := Self.Create;
 end;
 
-function TControllerConexoesFireDacFactory.Conexao(Tipo: TTipoBanco)
-  : IControllerConexoesFireDac;
+function TControllerConexoesFireDacFactory.Postegres
+  : IControllerConexoesFireDacPostegres;
 begin
-  case Tipo of
-    FireBird:
-      ;
-    Postegres:
-      Result := TControllerConexoesFireDacPostegres.New;
-  end;
-
+  Result := TControllerConexoesFireDacPostegres.New;
 end;
 
 end.

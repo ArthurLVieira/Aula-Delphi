@@ -334,7 +334,6 @@
         <DCCReference Include="Model\Entity\Menu.Model.Entity.Factory.pas"/>
         <DCCReference Include="Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Factory.pas"/>
         <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Interfaces.pas"/>
-        <DCCReference Include="Controller\Conexoes\Menu.Controller.Conexoes.Factory.FireDac.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Interfaces.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Produtos.pas"/>
         <DCCReference Include="Controller\Entity\Menu.Controller.Entity.Factory.pas"/>

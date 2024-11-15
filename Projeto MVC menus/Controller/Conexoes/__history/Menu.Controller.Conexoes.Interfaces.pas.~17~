@@ -2,16 +2,15 @@ unit Menu.Controller.Conexoes.Interfaces;
 
 interface
 
-uses System.Classes,
-  FireDAC.Phys, Menu.Controller.Conexoes.FireDAC.Interfaces,
-  Menu.Controller.Conexoes.DataSet.Interfaces;
+uses Menu.Model.Conexoes.DataSet.Interfaces, System.Classes,
+  FireDAC.Phys, Menu.Controller.Conexoes.FireDAC.Interfaces;
 
 type
 
   IControllerConexoesFactory = interface
     ['{CFA17375-6B55-4220-9454-ED32841B7934}']
     function FireDAC: IControllerConexoesFireDacFactory;
-    function DataSet: IControllerConexoesDataSet;
+    function DataSet(Conexao: TComponent): IModelConexoesDataSet;
   end;
 
   IControllerConexoesFacade = interface

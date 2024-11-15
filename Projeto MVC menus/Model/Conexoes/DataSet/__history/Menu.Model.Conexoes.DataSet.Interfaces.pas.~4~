@@ -7,7 +7,6 @@ uses
 
 type
 
-
   IModelConexoesDataSet = interface
     ['{48D27B1B-7FD9-4BA4-876F-5916DCF2D93A}']
     function Open(aTable: string): IModelConexoesDataSet;

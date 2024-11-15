@@ -28,7 +28,6 @@ uses
   Menu.Model.Entity.Factory in 'Model\Entity\Menu.Model.Entity.Factory.pas',
   Menu.Controller.Conexoes.FireDac.Factory in 'Controller\Conexoes\FireDac\Menu.Controller.Conexoes.FireDac.Factory.pas',
   Menu.Controller.Conexoes.Interfaces in 'Controller\Conexoes\Menu.Controller.Conexoes.Interfaces.pas',
-  Menu.Controller.Conexoes.Factory.FireDac in 'Controller\Conexoes\Menu.Controller.Conexoes.Factory.FireDac.pas',
   Menu.Controller.Entity.Interfaces in 'Controller\Entity\Menu.Controller.Entity.Interfaces.pas',
   Menu.Controller.Entity.Produtos in 'Controller\Entity\Menu.Controller.Entity.Produtos.pas',
   Menu.Controller.Entity.Factory in 'Controller\Entity\Menu.Controller.Entity.Factory.pas',

@@ -43,13 +43,7 @@ end;
 function TControllerConexoesFireDacFactory.Conexao(Tipo: TTipoBanco)
   : IControllerConexoesFireDac;
 begin
-  case Tipo of
-    FireBird:
-      ;
-    Postegres:
-      Result := TControllerConexoesFireDacPostegres.New;
-  end;
-
+  Result := TControllerConexoesFireDacPostegres.New;
 end;
 
 end.

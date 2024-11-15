@@ -3,7 +3,7 @@ unit Menu.Controller.Conexoes.DataSet;
 interface
 
 uses
-  Menu.Controller.Conexoes.DataSet.Interfaces, System.Classes,
+  Menu.Controller.Conexoes.DataSet.Interfaces, System.Classes, 
   Menu.Model.Conexoes.DataSet.Interfaces;
 
 type
@@ -16,24 +16,24 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IControllerConexoesDataSet;
-    function Conexao(Conexao: TComponent): IModelConexoesDataSet;
+    function DataSet(Conexao: TComponent): IModelConexoesDataSet;
   end;
 
 implementation
 
 { TControllerConexoesDataSet }
 
-uses Menu.Model.Conexoes.Facade;
+uses Menu.Model.Conexoes.DataSet.Factory;
 
 constructor TControllerConexoesDataSet.Create;
 begin
 
 end;
 
-function TControllerConexoesDataSet.Conexao(Conexao: TComponent)
-  : IModelConexoesDataSet;
+function TControllerConexoesDataSet.DataSet(
+  Conexao: TComponent): IModelConexoesDataSet;
 begin
-  Result := TModelConexoesFacade.New.DataSet.DataSet(Conexao);
+  Result := TModelConexoesDataSetFactory.New.DataSet(Conexao);
 end;
 
 destructor TControllerConexoesDataSet.Destroy;

@@ -10,23 +10,23 @@ type
   TControllerConexoesFacade = class(TInterfacedObject,
     IControllerConexoesFacade)
   private
-    FConexao: IControllerConexoesFactory;
+    FConexao : IControllerConexoesFactoryConexao;
   public
     constructor Create;
     destructor Destroy; override;
     class function New: IControllerConexoesFacade;
-    function Conexoes: IControllerConexoesFactory;
+    function FireDac: IControllerConexoesFactoryConexao;
   end;
 
 implementation
 
 { TControllerConexoesFacade }
 
-uses Menu.Controller.Conexoes.Factory;
+uses Menu.Controller.Conexoes.Factory.Conexao;
 
 constructor TControllerConexoesFacade.Create;
 begin
-
+  FConexao := TControllerConexoesFactoryConexao.New;
 end;
 
 destructor TControllerConexoesFacade.Destroy;
@@ -35,9 +35,8 @@ begin
   inherited;
 end;
 
-function TControllerConexoesFacade.Conexoes: IControllerConexoesFactory;
+function TControllerConexoesFacade.FireDac: IControllerConexoesFactoryConexao;
 begin
-  FConexao := TControllerConexoesFactory.New;
   Result := FConexao;
 end;
 

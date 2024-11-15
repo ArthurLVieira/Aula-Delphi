@@ -45,16 +45,9 @@ end;
 
 function TControllerConexoesFireDacPostegres.Conectar: IModelConexaoFireDac;
 begin
-  Result := TModelConexoesFacade.New
-    .Conexao
-      .FireDac(FDPhysPgDriverLink)
-      .Parametros
-        .DataBase('')
-        .UserName('')
-        .Password('')
-        .DriverID('PG')
-        .Server('')
-      .Port(5401).EndParametros.Conectar;
+  Result := TModelConexoesFacade.New.Conexao.FireDac(FDPhysPgDriverLink)
+    .Parametros.DataBase('').UserName('').Password('').DriverID('PG').Server('')
+    .Port(5401).EndParametros.Conectar;
 end;
 
 end.
