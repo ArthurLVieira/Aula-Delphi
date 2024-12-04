@@ -27,7 +27,7 @@ uses Menu.Model.Conexoes.Facade;
 constructor TControllerEntityProdutos.Create;
 begin
   FFacade := TModelConexoesFacade.New;
-  FEntity := TModelEntityFactory.New.;
+  FEntity := TModelEntityFactory.New.Produtos(FFacade.DataSet.DataSet());
 end;
 
 destructor TControllerEntityProdutos.Destroy;
